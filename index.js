@@ -13,7 +13,8 @@ const config = minimist(process.argv.slice(2), {
     'host',
     'port',
     'user',
-    'password'
+    'password',
+    'filename'
   ],
   alias: {
     h: 'help',
@@ -21,7 +22,8 @@ const config = minimist(process.argv.slice(2), {
     h: 'host',
     p: 'port',
     u: 'user',
-    P: 'password'
+    P: 'password',
+    f: 'filename'
   },
   default: {
     host: 'localhost',
@@ -46,6 +48,7 @@ if (config.help) {
     , '    --port - database port (default: ' + config.port + ')'
     , '    --user - database user (default: ' + config.user + ')'
     , '    --password - database user password'
+    , '    --filename - choose table name instead of using default from file name'
     , '    --version - returns running version then exits'
     , ''
     , 'geojson2postgis@' + packagejson.version
@@ -78,7 +81,13 @@ const db = Knex({
   }
 });
 
-const tableName = path.parse(fileName).name;
+let tableName;
+if ('filename' in config) {
+  tableName = config.filename;
+} else  {
+  tableName = path.parse(fileName).name;
+};
+
 const geojson = JSON.parse(fs.readFileSync(fileName));
 
 geojson2postgis(db, tableName, geojson).then(function (result) {
