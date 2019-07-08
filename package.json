@@ -1,6 +1,6 @@
 {
   "name": "@webgeodatavore/geojson2postgis",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Insert GeoJSON features into PostGIS database (fork from Stepan Kuzmin with minor changes)",
   "main": "src/geojson2postgis.js",
   "author": "Thomas Gratier",
