@@ -1,17 +1,17 @@
 {
-  "name": "geojson2postgis",
-  "version": "1.0.0",
-  "description": "Insert GeoJSON features into PostGIS database",
+  "name": "@webgeodatavore/geojson2postgis",
+  "version": "1.0.1",
+  "description": "Insert GeoJSON features into PostGIS database (fork from Stepan Kuzmin with minor changes)",
   "main": "src/geojson2postgis.js",
-  "author": "Stepan Kuzmin <to.stepan.kuzmin@gmail.com> (stepankuzmin.ru)",
+  "author": "Thomas Gratier",
   "license": "MIT",
-  "homepage": "https://github.com/stepankuzmin/geojson2postgis#readme",
+  "homepage": "https://github.com/webgeodatavore/geojson2postgis#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stepankuzmin/geojson2postgis.git"
+    "url": "git+https://github.com/webgeodatavore/geojson2postgis.git"
   },
   "bugs": {
-    "url": "https://github.com/stepankuzmin/geojson2postgis/issues"
+    "url": "https://github.com/webgeodatavore/geojson2postgis/issues"
   },
   "scripts": {
     "test": "node test/test.js"
@@ -20,7 +20,7 @@
     "geojson2postgis": "./index.js"
   },
   "dependencies": {
-    "knex": "0.16.0",
+    "knex": "0.16.5",
     "minimist": "1.2.0",
     "pg": "7.8.0"
   },
